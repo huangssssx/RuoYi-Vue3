@@ -83,6 +83,35 @@ export const constantRoutes = [
         meta: { title: '个人中心', icon: 'user' }
       }
     ]
+  },
+  {
+    path: '/tunnels',
+    component: Layout,
+    redirect: '/tunnels/point',
+    name: 'Tunnels',
+    meta: { title: '隧道监测', icon: 'monitor' },
+    children: [
+      {
+        path: 'point',
+        name: 'TunnelPoint',
+        component: () => import('@/views/tunnels/point/index'),
+        meta: { title: '点位管理' }
+      },
+      {
+        path: 'tunnel/:pointId',
+        name: 'TunnelList',
+        component: () => import('@/views/tunnels/tunnel/index'),
+        meta: { title: '隧道管理', activeMenu: '/tunnels/point' },
+        hidden: true
+      },
+      {
+        path: 'keypoint/:tunnelId',
+        name: 'KeyPoint',
+        component: () => import('@/views/tunnels/keypoint/index'),
+        meta: { title: '关键点管理', activeMenu: '/tunnels/point' },
+        hidden: true
+      }
+    ]
   }
 ]
 

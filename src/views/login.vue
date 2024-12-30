@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginRef" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">若依后台管理系统</h3>
+      <h3 class="title">后台管理系统</h3>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
@@ -168,6 +168,7 @@ getCookie();
   justify-content: center;
   align-items: center;
   height: 100%;
+  background-position: center;
   background-image: url("../assets/images/login-background.jpg");
   background-size: cover;
 }
